@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+<link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static',filename='login.css')}}" />
+
+{% block content %}
+
+<h1 class="container">Login Page</h1>
+<div>
+	<!-- post on the same route with empty action -->
+	<form action="" method="POST">
+		<!-- hidden tag is like csrf token for protection -->
+		{{ form.hidden_tag() }}
+		<fieldset class="container">
+			<div class="container">
+				{{ form.username.label(class="form-control-label") }}
+				{{ form.username(class="form-control") }}
+			</div>
+			<div class="container">
+				{{ form.password.label(class="form-control-label") }}
+				{{ form.password(class="form-control") }}
+			</div>
+			<div class="container">
+				{{ form.submit(class="btn btn-outline-primary") }}
+			</div>
+		</fieldset>
+	</form>
+	
+	
+</div>
+{% endblock %}

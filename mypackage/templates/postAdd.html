@@ -1,0 +1,22 @@
+{%  extends 'layout.html' %}
+
+{% block content %}
+    <h1 class="container">Create Post </h1>
+    <form class="container" action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <div class="container">
+            {{ form.user_id.label() }}
+            {{ form.user_id(class="form-control") }}
+        </div>
+        <div class="container">
+            {{ form.content.label() }}
+            {{ form.content(class="form-control") }}
+        </div>
+        
+        <div class="container">
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+
+    </form>
+    
+{% endblock %}
